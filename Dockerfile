@@ -11,9 +11,9 @@ RUN apt-get update && apt-get install -y \
 
  && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /opt
+WORKDIR opt
 
 RUN git clone https://github.com/datacenter/acitoolkit
 WORKDIR acitoolkit
 RUN python setup.py install
-
+WORKDIR /
