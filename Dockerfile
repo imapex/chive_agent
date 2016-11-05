@@ -1,10 +1,9 @@
 # VERSION 1.0
-FROM python:2-alpine
+FROM python:2.7-slim
 MAINTAINER Justin Barksdale, "jusbarks@cisco.com"
 
 
 RUN apt-get update && apt-get install -y \
-    git python python-pip \
 
  && rm -rf /var/lib/apt/lists/*
 
