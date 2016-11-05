@@ -6,7 +6,7 @@ MAINTAINER Justin Barksdale, "jusbarks@cisco.com"
 RUN apt-get update && apt-get install -y \
     git \
     python \
-    python-pip 
+    python-pip \
 
  && rm -rf /var/lib/apt/lists/*
 
