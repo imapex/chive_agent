@@ -7,13 +7,12 @@ RUN apt-get update && apt-get install -y \
     git \
     python\
     python-pip\
-
-
  && rm -rf /var/lib/apt/lists/*
 
-WORKDIR opt
+# WORKDIR opt
 
-RUN git clone https://github.com/datacenter/acitoolkit
-WORKDIR acitoolkit
-RUN python setup.py install
-WORKDIR /
+# RUN git clone https://github.com/datacenter/acitoolkit
+# WORKDIR acitoolkit
+#RUN python setup.py install
+#WORKDIR /
+RUN pip install --requirement ./requirements.txt
