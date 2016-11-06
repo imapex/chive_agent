@@ -16,4 +16,7 @@ RUN pip install --upgrade pip
 # WORKDIR acitoolkit
 #RUN python setup.py install
 #WORKDIR /
-RUN pip install --requirement .requirements.txt
+
+ADD . /app
+WORKDIR /app
+RUN pip install --requirement ./requirements.txt
