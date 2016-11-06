@@ -9,10 +9,11 @@ RUN apt-get update && apt-get install -y \
     python-pip\
  && rm -rf /var/lib/apt/lists/*
 
+RUN pip install --upgrade pip
 # WORKDIR opt
 
 # RUN git clone https://github.com/datacenter/acitoolkit
 # WORKDIR acitoolkit
 #RUN python setup.py install
 #WORKDIR /
-RUN pip install --requirement ./requirements.txt
+RUN pip install --requirement .requirements.txt
