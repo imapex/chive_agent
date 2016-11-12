@@ -17,11 +17,15 @@ RUN pip install --upgrade pip
 
 #COPY requirements.txt /tmp/
 ADD . /app
-WORKDIR /app
-RUN pip install --requirement ./requirements.txt
+#WORKDIR /app
+RUN pip install --requirement ./app/requirements.txt
 
 #COPY . /tmp/
 
 # Run python program
 
-CMD ["python", "./chive_agent_aci.py"]
+#CMD ["python", "./chive_agent_aci.py"]
+
+# Run BASH script
+RUN chmod +x /app/chive_agent.sh
+CMD ["/app/chive_agent.sh"]
