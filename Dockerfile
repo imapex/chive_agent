@@ -5,6 +5,7 @@ MAINTAINER Justin Barksdale "jusbarks@cisco.com"
 RUN apk update && apk add --no-cache --virtual \
     git \
     libmysqlclient-dev \
+    pip \
     python \
     python-pip \
 
