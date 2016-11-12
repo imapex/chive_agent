@@ -27,5 +27,5 @@ RUN apk update && apk add --no-cache --virtual \
     python-pip \
 
 # Run BASH script
-RUN chmod +x chive_agent.sh
+CMD ["chmod +x chive_agent.sh"]
 CMD ["./chive_agent.sh"]
