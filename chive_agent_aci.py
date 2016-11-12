@@ -1,18 +1,19 @@
 import json
 import re
 import requests
-import MySQLdb as mdb
-import sys
+# import MySQLdb as mdb
+# import sys
 import time
+import getpass
 
 # ---- sort user info from bash script section  -------
 # Get user provided information from bash script and parse it
-bash_user_info = sys.argv[1]
+# bash_user_info = sys.argv[1]
 
-bash_lst = (bash_user_info.split(','))
-myapic_ip = bash_lst[0]
-myapic_usr = bash_lst[1]
-myapic_pwd = bash_lst[2]
+# bash_lst = (bash_user_info.split(','))
+myapic_ip = raw_input('Enter your APIC IP Address')
+myapic_usr = raw_input('Enter your APIC Administrative Username')
+myapic_pwd = getpass.getpass('Enter APIC Apssword')
 
 # ---- connect to APIC section  -------
 # Generate base login URl (myapic_ip variable defined by user via bash script)
