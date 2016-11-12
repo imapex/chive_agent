@@ -1,22 +1,31 @@
-# VERSION 1.0
-FROM python:2.7-slim
-MAINTAINER Justin Barksdale, "jusbarks@cisco.com"
+FROM python:2.7-alpine
+MAINTAINER Your Name climann2@cisco.com
 
+# You can provide comments in Dockerfiles
+# Install any needed packages for your application
+# Update
 
 RUN apt-get update && apt-get install -y \
     git \
-    python\
-    python-pip\
+    python \
+    python-pip \
+    libmysqlclient-dev \
  && rm -rf /var/lib/apt/lists/*
 
+# Install app dependencies
 RUN pip install --upgrade pip
-# WORKDIR opt
 
-# RUN git clone https://github.com/datacenter/acitoolkit
-# WORKDIR acitoolkit
-#RUN python setup.py install
-#WORKDIR /
-
+#COPY requirements.txt /tmp/
 ADD . /app
-WORKDIR /app
-RUN pip install --requirement ./requirements.txt
+#WORKDIR /app
+RUN pip install --requirement ./app/requirements.txt
+
+#COPY . /tmp/
+
+# Run python program
+
+#CMD ["python", "./chive_agent_aci.py"]
+
+# Run BASH script
+RUN chmod +x /app/chive_agent.sh
+CMD ["/app/chive_agent.sh"]
