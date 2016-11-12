@@ -27,5 +27,5 @@ RUN apk update && apk add --no-cache --virtual \
 COPY . .
 
 # Run BASH script
-RUN chmod +x /chive_agent.sh
+RUN chmod +x ./chive_agent.sh
 CMD ["./chive_agent.sh"]
