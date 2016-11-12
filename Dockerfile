@@ -28,4 +28,4 @@ COPY . .
 
 # Run BASH script
 RUN chmod +x /app/chive_agent.sh
-CMD ["/app/chive_agent.sh"]
+CMD ["./chive_agent.sh"]
