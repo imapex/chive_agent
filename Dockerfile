@@ -17,7 +17,7 @@ RUN apk update && apk add --no-cache --virtual \
 
 ADD . /app
 WORKDIR /app
-RUN pip install --requirement ./requirements/txt
+RUN pip install --requirement ./requirements.txt
 
 
 
