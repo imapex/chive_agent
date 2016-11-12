@@ -5,13 +5,17 @@ MAINTAINER Justin Barksdale "jusbarks@cisco.com"
 RUN apk update && apk add --no-cache --virtual \
     git \
     libmysqlclient-dev \
-    pip \
     python \
     python-pip \
 
+  && rm -rf /var/cache/apk/* \
+  && pip install --no-cache-dir \
+          setuptools \
+          wheel
+
 # RUN pip install --upgrade pip
 
-ADD ./app
+ADD . /app
 WORKDIR /app
 RUN pip install --requirement ./requirements/txt
 
