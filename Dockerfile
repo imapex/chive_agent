@@ -7,12 +7,14 @@ MAINTAINER Your Name climann2@cisco.com
 
 RUN apt-get update && apt-get install -y \
     git \
-    python\
-    python-pip\
+    python \
+    python-pip \
+    libmysqlclient-dev \
  && rm -rf /var/lib/apt/lists/*
 
 # Install app dependencies
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip \
+
 
 
 #COPY requirements.txt /tmp/
