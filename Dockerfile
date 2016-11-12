@@ -1,5 +1,5 @@
 FROM python:2.7-alpine
-MAINTAINER Your Name jusbarks
+MAINTAINER Justin Barksdale "jusbarks@cisco.com"
 
 # You can provide comments in Dockerfiles
 # Install any needed packages for your application
@@ -7,24 +7,19 @@ MAINTAINER Your Name jusbarks
 
 RUN apt-get update && apt-get install -y \
     git \
+    libmysqlclient-dev \
     python \
     python-pip \
-    libmysqlclient-dev \
+
  && rm -rf /var/lib/apt/lists/*
 
 # Install app dependencies
 RUN pip install --upgrade pip
 
-#COPY requirements.txt /tmp/
+# Copy requirements.txt into apprpriate location
 ADD . /app
-#WORKDIR /app
 RUN pip install --requirement ./app/requirements.txt
 
-#COPY . /tmp/
-
-# Run python program
-
-#CMD ["python", "./chive_agent_aci.py"]
 
 # Run BASH script
 RUN chmod +x /app/chive_agent.sh
