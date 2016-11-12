@@ -5,7 +5,7 @@ MAINTAINER Justin Barksdale "jusbarks@cisco.com"
 RUN apk add -U \
     git \
     python \
-    python-pip \
+    python-pip
 
 # RUN pip install --upgrade pip
 
