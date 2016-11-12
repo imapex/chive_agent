@@ -24,4 +24,4 @@ RUN pip install --requirement ./requirements.txt
 
 # Run python program
 
-CMD ["python", "./chive_agent_api.py"]
+CMD ["python", "./chive_agent_aci.py"]
