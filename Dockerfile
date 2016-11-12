@@ -2,16 +2,11 @@ FROM python:2.7-alpine
 MAINTAINER Justin Barksdale "jusbarks@cisco.com"
 
 
-RUN apk add -U \
+RUN apk update && apk add --no-cache --virtual \
     git \
     libmysqlclient-dev \
     python \
     python-pip \
-
-  && rm -rf /var/cache/apk/* \
-  && pip install --no-cache-dir \
-          setuptools \
-          wheel
 
 # RUN pip install --upgrade pip
 
