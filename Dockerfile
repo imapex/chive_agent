@@ -1,5 +1,5 @@
 FROM python:2.7-alpine
-MAINTAINER Your Name climann2@cisco.com
+MAINTAINER Your Name jusbarks
 
 # You can provide comments in Dockerfiles
 # Install any needed packages for your application
