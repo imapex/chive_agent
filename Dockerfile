@@ -5,7 +5,7 @@ MAINTAINER Justin Barksdale "jusbarks@cisco.com"
 # Install any needed packages for your application
 # Update
 
-RUN apt-get update && apt-get install -y \
+RUN apk update && apk add \
     git \
     libmysqlclient-dev \
     python \
