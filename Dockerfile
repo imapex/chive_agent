@@ -2,9 +2,8 @@ FROM python:2.7-alpine
 MAINTAINER Justin Barksdale "jusbarks@cisco.com"
 
 
-RUN apk update && apk add --no-cache --virtual \
+RUN apk add -U \
     git \
-    libmysqlclient-dev \
     python \
     python-pip \
 
