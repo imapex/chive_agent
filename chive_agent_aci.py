@@ -3,6 +3,7 @@ import re
 import requests
 import MySQLdb as mdb
 import sys
+import time
 
 # ---- sort user info from bash script section  -------
 # Get user provided information from bash script and parse it
