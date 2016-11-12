@@ -17,14 +17,14 @@ RUN mkdir -p $INSTALL_PATH
 WORKDIR $INSTALL_PATH
 
 COPY requirements.txt requirements.txt
+COPY chive_agent.sh chive_agent.sh
+COPY agent.py agent.py
 
 RUN apk update && apk add --no-cache --virtual \
     git \
     libmysqlclient-dev \
     python \
     python-pip \
-
-COPY . .
 
 # Run BASH script
 RUN chmod +x chive_agent.sh
