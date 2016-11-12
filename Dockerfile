@@ -8,12 +8,11 @@ RUN apk update && apk add --no-cache --virtual \
     python \
     python-pip \
 
-RUN pip install --upgrade pip
-COPY requirements.txt /app/
-RUN pip install -r /app/requirements.txt
+# RUN pip install --upgrade pip
 
+ADD ./app
 WORKDIR /app
-ADD ./agents /app/agents
+RUN pip install --requirement ./requirements/txt
 
 
 
