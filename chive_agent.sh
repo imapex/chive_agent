@@ -1,4 +1,3 @@
-
 #! /bin/bash
 
 echo
@@ -7,9 +6,6 @@ echo "Thank you for using the CHIVE Demo Application."
 echo "This script will install the chive agent aci app"
 echo "###############################################"
 echo
-# commands to brind up docker container :  chive_agent_aci.py
-# < STUFF HERE >
-
 
 echo "Press Enter to continue..."
 read confirm
@@ -26,10 +22,11 @@ read -s myapic_pwd
 
 echo
 echo "The IP address of your APIC is : ${myapic_ip}"
-echo "The IP address of your APIC is : ${myapic_usr}"
+echo "The USERNAME is                : ${myapic_usr}"
 echo
 echo "Press Enter to continue..."
 read confirm
 
 python ./app/chive_agent_aci.py $myapic_ip,$myapic_usr,$myapic_pwd
-#python -c "import chive-agent_aci1; chive-agent_aci1.apic_connect('$myapic_ip','$myapic_usr','$myapic_pwd')"
+
+
