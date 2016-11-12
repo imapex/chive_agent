@@ -21,11 +21,12 @@ COPY chive_agent.sh chive_agent.sh
 COPY agent.py agent.py
 
 RUN apk update && apk add --no-cache --virtual \
+    bash \
     git \
     libmysqlclient-dev \
     python \
     python-pip \
 
 # Run BASH script
-CMD ["chmod +x chive_agent.sh"]
-CMD ["./chive_agent.sh"]
+RUN chmod +x chive_agent.sh
+CMD ["/chive_agent.sh"]
