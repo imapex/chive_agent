@@ -1,10 +1,9 @@
-FROM alpine:latest
+FROM python:2.7-slim
 MAINTAINER Your Name climann2@cisco.com
 
 # You can provide comments in Dockerfiles
 # Install any needed packages for your application
 # Update
-RUN apk add --update python py-pip
 
 RUN apt-get update && apt-get install -y \
     git \
