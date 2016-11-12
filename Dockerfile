@@ -2,7 +2,9 @@ FROM python:2.7-alpine
 MAINTAINER Justin Barksdale "jusbarks@cisco.com"
 
 
-RUN apk add -U \
+RUN apk add --update \
+        python \
+        py-pip \
 
 # RUN pip install --upgrade pip
 
