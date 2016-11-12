@@ -1,13 +1,13 @@
 FROM python:2.7-alpine
 MAINTAINER Justin Barksdale "jusbarks@cisco.com"
 
-RUN apk update
-
+# RUN apk add --no-cache --virtual .build-deps \
 #    git \
 #    libmysqlclient-dev \
 #    python \
 #    python-pip \
-#  && rm -rf /var/cache/apk/* \
+# RUN pip install --no-cache-dir <packages_that_require_gcc...> \
+# RUN apk del .build-deps
 
 ADD . /app
 WORKDIR /app
