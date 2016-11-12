@@ -7,9 +7,9 @@ MAINTAINER Your Name climann2@cisco.com
 
 RUN apt-get update && apt-get install -y \
     git \
+    libmysqlclient-dev \
     python \
     python-pip \
-    libmysqlclient-dev \
  && rm -rf /var/lib/apt/lists/*
 
 # Install app dependencies
