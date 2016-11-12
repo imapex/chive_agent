@@ -5,13 +5,19 @@ MAINTAINER Justin Barksdale "jusbarks@cisco.com"
 # Install any needed packages for your application
 # Update
 
-RUN apk update && apk add \
-    git \
-    libmysqlclient-dev \
-    python \
-    python-pip \
+#RUN apk update && apk add \
+#    git \
+#   libmysqlclient-dev \
+#    python \
+#    python-pip \
 
- && rm -rf /var/lib/apt/lists/*
+RUN apk add -U \
+  && rm -rf /var/cache/apk/* \
+  && pip install --no-cache-dir \
+          setuptools \
+          wheel
+
+# && rm -rf /var/lib/apt/lists/*
 
 # Install app dependencies
 RUN pip install --upgrade pip
