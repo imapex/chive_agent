@@ -13,7 +13,7 @@ import getpass
 # bash_lst = (bash_user_info.split(','))
 myapic_ip = raw_input('Enter your APIC IP Address:  ')
 myapic_usr = raw_input('Enter your APIC Administrative Username:  ')
-myapic_pwd = getpass.getpass('Enter APIC Apssword:  ')
+myapic_pwd = getpass.getpass('Enter APIC Password:  ')
 
 # ---- connect to APIC section  -------
 # Generate base login URl (myapic_ip variable defined by user via bash script)
