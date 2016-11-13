@@ -14,6 +14,6 @@ ADD . /app
 WORKDIR /app
 
 RUN pip install -r requirements.txt
-RUN [ "chmod", "+x", "/agents/run.sh"]
+# RUN [ "chmod", "+x", "/agents/run.sh"]
 CMD ["./agent/run.sh"]
 #CMD [ "python", "./agents/chive_agent_aci.py" ]
