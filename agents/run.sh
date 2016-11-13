@@ -5,4 +5,7 @@ read apic_username
 echo "What is you APIC Password: "
 read -s apic_password
 
-docker run -ite APIC_IP=$apic_ip -e APIC_USERNAME=$apic_username -e APIC_PASSWORD=$apic_password 3pings/chive_agent:latest
+docker run -ite APIC_IP=$apic_ip \
+    -e APIC_USERNAME=$apic_username \
+    -e APIC_PASSWORD=$apic_password \
+    3pings/chive_agent:latest

@@ -2,28 +2,23 @@ import json
 import re
 import requests
 # import MySQLdb as mdb
-# import sys
+import os
 import time
 # import getpass
 
 # ---- sort user info from bash script section  -------
 # Get user provided information from bash script and parse it
-# bash_user_info = sys.argv[1]
 
-# bash_lst = (bash_user_info.split(','))
-
-
-#myapic_ip = raw_input('Enter your APIC IP Address:  ')
-#myapic_usr = raw_input('Enter your APIC Administrative Username:  ')
-#myapic_pwd = getpass.getpass('Enter APIC Password:  ')
+apic_ip = os.environ['APIC_IP']
+apic_username = os.environ['APIC_USERNAME']
+apic_password = os.environ['APIC_PASSWORD']
 
 # ---- connect to APIC section  -------
 # Generate base login URl (myapic_ip variable defined by user via bash script)
-base_url = 'http://' + $APIC_IP + '/api/'
-print(base_url)
+base_url = 'http://' + apic_ip + '/api/'
 
 # Generate credentials structure
-name_pwd = {'aaaUser': {'attributes': {'name': $APIC_USERNAME, 'pwd': $APIC_PASSWORD}}}
+name_pwd = {'aaaUser': {'attributes': {'name': apic_username, 'pwd': apic_password}}}
 json_credentials = json.dumps(name_pwd)
 
 # Generate login url
