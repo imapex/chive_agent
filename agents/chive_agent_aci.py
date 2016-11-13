@@ -20,6 +20,7 @@ import time
 # ---- connect to APIC section  -------
 # Generate base login URl (myapic_ip variable defined by user via bash script)
 base_url = 'http://' + $APIC_IP + '/api/'
+print(base_url)
 
 # Generate credentials structure
 name_pwd = {'aaaUser': {'attributes': {'name': $APIC_USERNAME, 'pwd': $APIC_PASSWORD}}}
