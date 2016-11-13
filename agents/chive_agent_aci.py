@@ -4,23 +4,25 @@ import requests
 # import MySQLdb as mdb
 # import sys
 import time
-import getpass
+# import getpass
 
 # ---- sort user info from bash script section  -------
 # Get user provided information from bash script and parse it
 # bash_user_info = sys.argv[1]
 
 # bash_lst = (bash_user_info.split(','))
-myapic_ip = raw_input('Enter your APIC IP Address:  ')
-myapic_usr = raw_input('Enter your APIC Administrative Username:  ')
-myapic_pwd = getpass.getpass('Enter APIC Password:  ')
+
+
+#myapic_ip = raw_input('Enter your APIC IP Address:  ')
+#myapic_usr = raw_input('Enter your APIC Administrative Username:  ')
+#myapic_pwd = getpass.getpass('Enter APIC Password:  ')
 
 # ---- connect to APIC section  -------
 # Generate base login URl (myapic_ip variable defined by user via bash script)
-base_url = 'http://' + myapic_ip + '/api/'
+base_url = 'http://' + $APIC_IP + '/api/'
 
 # Generate credentials structure
-name_pwd = {'aaaUser': {'attributes': {'name': myapic_usr, 'pwd': myapic_pwd}}}
+name_pwd = {'aaaUser': {'attributes': {'name': $APIC_USERNAME, 'pwd': $APIC_PASSWORD}}}
 json_credentials = json.dumps(name_pwd)
 
 # Generate login url
@@ -67,7 +69,7 @@ try:
 
             sensor = re.findall(r'sup/sensor-(.*?)/', dn_ascii)
 
-            if '3' in sensor:  # Interested in only sensor-3
+            if '2' in sensor:  # Interested in only sensor-3
                 # this will find ['node-x'] ex . topology/pod-1/node-101/sys/ch/supslot-1/sup/sensor-3/CDeqptTemp5min
                 devname = re.findall(r'.*/.*/(.*?)/.*/.*/.*/.*./.*/.*', dn_ascii)
                 dn_cnt += 1  # Add 1 to dn_cnt
