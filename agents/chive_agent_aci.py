@@ -31,8 +31,7 @@ login_attributes = auth['imdata'][0]['aaaLogin']['attributes']
 auth_token = login_attributes['token']
 
 # Create cookie array from token
-cookies = {}
-cookies['APIC-Cookie'] = auth_token
+cookies = {'APIC-Cookie': auth_token}
 
 # ---- make REST API Call section  -------
 try:
@@ -85,26 +84,3 @@ try:
 except KeyboardInterrupt:
     print('Manual break by user - CTRL-C')
 
-# ---- mySQL section  -------
-
-#con = mdb.connect('localhost', 'mydbuser', 'mydbpassword', 'mydatabase')
-
-#with con:
-#    cur = con.cursor()
-#    cur.execute("DROP TABLE IF EXISTS aciTable")
-#    cur.execute("CREATE TABLE aciTable(Id INT PRIMARY KEY AUTO_INCREMENT, \
-#                Node_Name VARCHAR(25),Temp VARCHAR(25),Date_Time VARCHAR(50))")
-#    x = 0
-#    while x < dn_cnt:
-#        cur.execute("INSERT INTO aciTable (Node_Name,Temp,Date_Time) VALUES(%s,%s,%s)",
-#                    (device_lst[x], curr_temp_lst[x], day_time_lst[x]))
-#        x += 1  # Add 1 to variable x
-
-        # Fetch data
-#    cur.execute("SELECT * FROM aciTable")
-
-#    rows = cur.fetchall()
-
-# Display to standard output for testing - visualize data exists in database
-#   for row in rows:
-#        print "This is from mySQL : ", row
