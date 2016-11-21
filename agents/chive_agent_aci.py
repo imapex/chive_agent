@@ -6,21 +6,10 @@ import time
 # ---- sort user info from bash script section  -------
 # Get user provided information from bash script and parse it
 
-#bash_user_info = sys.argv[1]
 
-#bash_lst = (bash_user_info.split(','))
-#myapic_ip = bash_lst[0]
-#myapic_usr = bash_lst[1]
-#myapic_pwd = bash_lst[2]
-
-#apic_ip = os.environ['APIC_IP']
-#apic_username = os.environ['APIC_USERNAME']
-#apic_password = os.environ['APIC_PASSWORD']
-
-apic_ip = "10.87.88.10"
-apic_username = "admin"
-apic_password = "Cisco123"
-
+apic_ip = os.environ['APIC_IP']
+apic_username = os.environ['APIC_USERNAME']
+apic_password = os.environ['APIC_PASSWORD']
 
 def connect_apic(apic_ip):
     # -- connect to APIC section  --
