@@ -13,7 +13,7 @@ FROM hypriot/rpi-python
 #    libmysqlclient-dev \
 #    python \
 #    python-pip \
-RUN pip install --no-cache-dir \
+# RUN pip install --no-cache-dir \
 
 #RUN apk del .build-deps
 
