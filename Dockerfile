@@ -1,4 +1,4 @@
-FROM hypriot/rpi-alpine-scratch
+FROM hypriot/rpi-python
 
 # RUN apk update && \
 #    apk upgrade && \
@@ -8,18 +8,18 @@ FROM hypriot/rpi-alpine-scratch
 # FROM python:2.7-alpine
 # MAINTAINER Justin Barksdale "jusbarks@cisco.com"
 
-RUN apk add --no-cache --virtual .build-deps \
+# RUN apk add --no-cache --virtual .build-deps \
 #    git \
 #    libmysqlclient-dev \
-    python \
-    python-pip \
+#    python \
+#    python-pip \
+RUN pip install --no-cache-dir \
 
-RUN apk del .build-deps
+#RUN apk del .build-deps
 
 ADD . /app
 WORKDIR /app
-RUN pip install --no-cache-dir \
-    -r requirements.txt
+RUN pip install -r requirements.txt
 # RUN [ "chmod", "+x", "/agents/run.sh"]
 # CMD ["./agent/run.sh"]
 CMD [ "python", "./agents/chive_agent_aci.py" ]
