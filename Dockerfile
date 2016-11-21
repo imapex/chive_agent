@@ -1,4 +1,4 @@
-FROM hypriot/rpi-python
+FROM hypriot/rpi-python
 
 # RUN apk update && \
 #    apk upgrade && \
