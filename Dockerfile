@@ -3,7 +3,7 @@ FROM hypriot/rpi-alpine-scratch
 # RUN apk update && \
 #    apk upgrade && \
 #    apk add bash && \
-    rm -rf /var/cache/apk/*
+#    rm -rf /var/cache/apk/*
 
 # FROM python:2.7-alpine
 # MAINTAINER Justin Barksdale "jusbarks@cisco.com"
