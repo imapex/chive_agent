@@ -1,4 +1,4 @@
-FROM python:2.7-alpine
+FROM alpine:3.4
 MAINTAINER Justin Barksdale "jusbarks@cisco.com"
 
 RUN apk add --no-cache python && \
