@@ -1,4 +1,4 @@
-# C H I V E Agent Service
+# C H I V E   Agent Service
 Cisco Heat Indication Visualization Explorer Agent
 
 # Background
