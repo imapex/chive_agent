@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 echo "What is your APIC IP Address: "
 read apic_ip
 echo "What is your APIC Username: "
