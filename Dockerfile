@@ -12,7 +12,6 @@ MAINTAINER Justin Barksdale "jusbarks@cisco.com"
 ADD . /app
 
 WORKDIR /app
-TAG 3pings/chive_agent:x86
 
 RUN pip install -r requirements.txt
 # RUN [ "chmod", "+x", "/agents/run.sh"]
