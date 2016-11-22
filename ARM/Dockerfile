@@ -1,4 +1,4 @@
-FROM python:2.7-alpine
+FROM python:2.7-wheezy
 MAINTAINER Justin Barksdale "jusbarks@cisco.com"
 
 ADD . /app
