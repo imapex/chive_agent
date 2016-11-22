@@ -1,11 +1,13 @@
 FROM hypriot/rpi-alpine-scratch
 MAINTAINER Justin Barksdale "jusbarks@cisco.com"
 
-RUN apk update && \
-    apk upgrade && \
-    apk add python && \
-    apk add python-pip && \
-    rm -rf /var/cache/apk/*
+RUN apk add --update \
+    python \
+    python-dev \
+    py-pip \
+    build-base \
+  && pip install virtualenv \
+  && rm -rf /var/cache/apk/*
 ADD . /app
 
 WORKDIR /app
