@@ -160,6 +160,7 @@ def send2_RESTAPI(obj):
             # print(requests.post('http://127.0.0.1:5000/device', headers=headers, json=data))
     except:
         print "API microservice not running...keep getting data..."
+        print rsp
         pass
 
 # run functions in a loop once every minute - until user issue break command
