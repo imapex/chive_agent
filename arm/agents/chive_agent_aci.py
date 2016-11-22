@@ -95,17 +95,17 @@ def call_api(base_url, cookies):
         # send object to RESTAPI function
         upload = send2_RESTAPI(obj)
 
-        if upload:
-            print "device successfully uploaded to api (L)"
-        else:
-            print "error uploading device "
+        # if upload:
+        #    print "device successfully uploaded to api (L)"
+        # else:
+        #    print "error uploading device "
 
     # Get all spine information
     spine_url = base_url + '/class/fabricNode.json?query-target-filter=and(eq(fabricNode.role,"spine"))'
     spines = requests.get(spine_url, cookies=cookies, verify=False).json()['imdata']
-    print spines
+    # print spines
     spine_dns = []
-    print spine_dns
+    # print spine_dns
 
     # for each of the objects returned by the API we will extract the dn
     for spine in spines:
@@ -144,10 +144,10 @@ def call_api(base_url, cookies):
             # send object to RESTAPI function
             upload = send2_RESTAPI(obj)
 
-            if upload:
-                print "device successfully uploaded to api (S)"
-            else:
-                print "error uploading device "
+            # if upload:
+            #   print "device successfully uploaded to api (S)"
+            # else:
+            #    print "error uploading device "
 
 
 def send2_RESTAPI(obj):
