@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-import json
 import requests
-import time
+import json
 import os
+import time
+
 
 # ---- sort user info from bash script section  -------
 # Get user provided information from bash script and parse it
