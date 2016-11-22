@@ -51,7 +51,7 @@ def call_api(base_url, cookies):
 
     # Generate URL used for REST API call to get 5minute temperature data
     # curly braces {} in string indicates a "replacement field"
-    sensor_url = base_url + 'mo/{}/sys/ch/supslot-1/sup/sensor-3/CDeqptTemp5min.json'
+    sensor_url = base_url + 'mo/{}/sys/ch/supslot-1/sup/sensor-2/CDeqptTemp5min.json'
 
     # Get all leaf information
     leaf_url = base_url + '/class/fabricNode.json?query-target-filter=and(eq(fabricNode.role,"leaf"))'
