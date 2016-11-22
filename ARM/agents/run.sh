@@ -10,4 +10,4 @@ if
 docker run -ite APIC_IP=$apic_ip \
     -e APIC_USERNAME=$apic_username \
     -e APIC_PASSWORD=$apic_password \
-    3pings/chive_agent:latest
+    3pings/chive_agent:arm
