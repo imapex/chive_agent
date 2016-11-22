@@ -12,5 +12,5 @@ One image is designed so that it can be deployed on a ARM (Raspberry Pi) device,
 # Diagram
 
 Inline-style: 
-![alt text]( https://github.com/imapex/chive_agent/diagrams/CHIVE_AGENT.gif "CHIVE_AGENT")
+![alt text]( https://github.com/imapex/chive_agent/blob/master/diagrams/CHIVE_AGENT.gif "CHIVE_AGENT")
 
