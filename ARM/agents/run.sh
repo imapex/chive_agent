@@ -7,7 +7,6 @@ echo "What is you APIC Password: "
 read -s apic_password
 echo
 
-if
 docker run -ite APIC_IP=$apic_ip \
     -e APIC_USERNAME=$apic_username \
     -e APIC_PASSWORD=$apic_password \
