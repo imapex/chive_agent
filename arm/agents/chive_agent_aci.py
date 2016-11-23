@@ -170,6 +170,6 @@ try:
         post_response = login_apic(base_url, apic_username, apic_password)
         cookies = get_token(post_response)
         call_api(base_url, cookies)
-        time.sleep(10)
+        time.sleep(60)
 except KeyboardInterrupt:  # allow user to break loop
     print("Manual break by user - CTRL-C")
