@@ -27,7 +27,7 @@ The HTML body of the POST message is JSON.
 # Diagram
 
 REST API Flow: 
-![chive_agent REST]( https://github.com/imapex/chive_agent/blob/master/diagrams/CHIVE_flow.gif "CHIVE_flow")
+![chive_agent Flow]( https://github.com/clintmann/chive_agent/blob/master/diagrams/CHIVE_flow.gif "CHIVE_flow")
 
 # Installation
 
