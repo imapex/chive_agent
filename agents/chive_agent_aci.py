@@ -12,7 +12,7 @@ import time
 apic_ip = os.environ['APIC_IP']
 apic_username = os.environ['APIC_USERNAME']
 apic_password = os.environ['APIC_PASSWORD']
-chive_app = os.environ['CHIVE_APP_PORT_5000_TCP_ADDR']
+chive_app = os.environ['APP_PORT_5000_TCP_ADDR']
 
 
 def connect_apic(apic_ip):
@@ -171,5 +171,5 @@ try:
         cookies = get_token(post_response)
         call_api(base_url, cookies)
         time.sleep(60)
-except KeyboardInterrupt:  # allow user to break loop
-    print("Manual break by user - CTRL-C")
+# except KeyboardInterrupt:  # allow user to break loop
+#    print("Manual break by user - CTRL-C")
