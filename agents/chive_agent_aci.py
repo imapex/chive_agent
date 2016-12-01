@@ -12,7 +12,7 @@ import time
 apic_ip = os.environ['APIC_IP']
 apic_username = os.environ['APIC_USERNAME']
 apic_password = os.environ['APIC_PASSWORD']
-chive_app = os.environ['CHIVE_APP']
+chive_app = os.environ['CHIVE_APP_PORT_5000_TCP_ADDR']
 
 
 def connect_apic(apic_ip):

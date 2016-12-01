@@ -12,4 +12,4 @@ docker run -de APIC_IP=$apic_ip \
     -e APIC_USERNAME=$apic_username \
     -e APIC_PASSWORD=$apic_password \
     -e CHIVE_APP=$chive_app \
-    3pings/chive_agent:latest
+    3pings/chive_agent:i386
