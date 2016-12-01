@@ -142,7 +142,7 @@ def call_api(base_url, cookies):
             obj = {"dn": dn, "attributes": {"temp": temp, "timestamp": time, "date": date, "condition": condition, "type": 'spine'}}
 
             # send object to RESTAPI function
-            upload = send2_RESTAPI(obj)
+            # upload = send2_RESTAPI(obj)
 
             # if upload:
             #   print "device successfully uploaded to api (S)"
