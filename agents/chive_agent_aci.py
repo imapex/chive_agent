@@ -137,12 +137,7 @@ def call_api(base_url, cookies):
             obj = {"dn": dn, "attributes": {"temp": temp, "timestamp": time, "date": date, "condition": condition, "type": 'spine'}}
 
             # send object to RESTAPI function
-            # upload = send2_RESTAPI(obj)
-
-            # if upload:
-            #   print "device successfully uploaded to api (S)"
-            # else:
-            #    print "error uploading device "
+            upload = send2_RESTAPI(obj)
 
 
 def send2_RESTAPI(obj):
@@ -152,7 +147,7 @@ def send2_RESTAPI(obj):
             headers = {"Content-Type": "application/json"}
             rsp = requests.post('http://chive_app:5000/device', headers=headers, data=json.dumps(obj))
             return rsp.ok
-            # print(requests.post('http://127.0.0.1:5000/device', headers=headers, json=data))
+
     except:
         print "API microservice not running...keep getting data..."
         print
