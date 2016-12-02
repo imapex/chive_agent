@@ -150,7 +150,7 @@ def send2_RESTAPI(obj):
     try:
         while True:
             headers = {"Content-Type": "application/json"}
-            rsp = requests.post('http://' + 'chive_app' + '/device', headers=headers, data=json.dumps(obj))
+            rsp = requests.post('http://chive_app/device', headers=headers, data=json.dumps(obj))
             return rsp.ok
             # print(requests.post('http://127.0.0.1:5000/device', headers=headers, json=data))
     except:
