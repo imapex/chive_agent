@@ -164,6 +164,7 @@ def send2_RESTAPI(obj):
         pass
 
 # run functions in a loop once every minute - until user issue break command
+
 try:
     while True:
         base_url = connect_apic(apic_ip)
@@ -171,5 +172,5 @@ try:
         cookies = get_token(post_response)
         call_api(base_url, cookies)
         time.sleep(60)
-# except KeyboardInterrupt:  # allow user to break loop
-#    print("Manual break by user - CTRL-C")
+except KeyboardInterrupt:  # allow user to break loop
+    print("Manual break by user - CTRL-C")
