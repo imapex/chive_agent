@@ -167,4 +167,4 @@ try:
         call_api(base_url, cookies)
         time.sleep(60)
 except KeyboardInterrupt:  # allow user to break loop
-print("Manual break by user - CTRL-C")
+    print("Manual break by user - CTRL-C")
