@@ -12,7 +12,7 @@ import time
 apic_ip = os.environ['APIC_IP']
 apic_username = os.environ['APIC_USERNAME']
 apic_password = os.environ['APIC_PASSWORD']
-chive_app = os.environ['CHIVE_APP']
+# chive_app = "chive_app"
 
 
 def connect_apic(apic_ip):
@@ -95,11 +95,6 @@ def call_api(base_url, cookies):
         # send object to RESTAPI function
         upload = send2_RESTAPI(obj)
 
-        # if upload:
-        #    print "device successfully uploaded to api (L)"
-        # else:
-        #    print "error uploading device "
-
     # Get all spine information
     spine_url = base_url + '/class/fabricNode.json?query-target-filter=and(eq(fabricNode.role,"spine"))'
     spines = requests.get(spine_url, cookies=cookies, verify=False).json()['imdata']
@@ -155,7 +150,7 @@ def send2_RESTAPI(obj):
     try:
         while True:
             headers = {"Content-Type": "application/json"}
-            rsp = requests.post('http://' + chive_app + '/device', headers=headers, data=json.dumps(obj))
+            rsp = requests.post('http://10.117.43.153/device', headers=headers, data=json.dumps(obj))
             return rsp.ok
             # print(requests.post('http://127.0.0.1:5000/device', headers=headers, json=data))
     except:
@@ -164,6 +159,7 @@ def send2_RESTAPI(obj):
         pass
 
 # run functions in a loop once every minute - until user issue break command
+
 try:
     while True:
         base_url = connect_apic(apic_ip)
