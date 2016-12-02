@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
-import json
 import requests
+import json
+import os
 import time
+
 
 # ---- sort user info from bash script section  -------
 # Get user provided information from bash script and parse it
@@ -10,6 +12,8 @@ import time
 apic_ip = os.environ['APIC_IP']
 apic_username = os.environ['APIC_USERNAME']
 apic_password = os.environ['APIC_PASSWORD']
+# chive_app = "chive_app"
+
 
 def connect_apic(apic_ip):
     # -- connect to APIC section  --
@@ -47,7 +51,7 @@ def call_api(base_url, cookies):
 
     # Generate URL used for REST API call to get 5minute temperature data
     # curly braces {} in string indicates a "replacement field"
-    sensor_url = base_url + 'mo/{}/sys/ch/supslot-1/sup/sensor-3/CDeqptTemp5min.json'
+    sensor_url = base_url + 'mo/{}/sys/ch/supslot-1/sup/sensor-2/CDeqptTemp5min.json'
 
     # Get all leaf information
     leaf_url = base_url + '/class/fabricNode.json?query-target-filter=and(eq(fabricNode.role,"leaf"))'
@@ -91,17 +95,12 @@ def call_api(base_url, cookies):
         # send object to RESTAPI function
         upload = send2_RESTAPI(obj)
 
-        if upload:
-            print "device successfully uploaded to api (L)"
-        else:
-            print "error uploading device "
-
     # Get all spine information
     spine_url = base_url + '/class/fabricNode.json?query-target-filter=and(eq(fabricNode.role,"spine"))'
     spines = requests.get(spine_url, cookies=cookies, verify=False).json()['imdata']
-    print spines
+    # print spines
     spine_dns = []
-    print spine_dns
+    # print spine_dns
 
     # for each of the objects returned by the API we will extract the dn
     for spine in spines:
@@ -138,12 +137,12 @@ def call_api(base_url, cookies):
             obj = {"dn": dn, "attributes": {"temp": temp, "timestamp": time, "date": date, "condition": condition, "type": 'spine'}}
 
             # send object to RESTAPI function
-            upload = send2_RESTAPI(obj)
+            # upload = send2_RESTAPI(obj)
 
-            if upload:
-                print "device successfully uploaded to api (S)"
-            else:
-                print "error uploading device "
+            # if upload:
+            #   print "device successfully uploaded to api (S)"
+            # else:
+            #    print "error uploading device "
 
 
 def send2_RESTAPI(obj):
@@ -151,14 +150,16 @@ def send2_RESTAPI(obj):
     try:
         while True:
             headers = {"Content-Type": "application/json"}
-            rsp = requests.post('http://chive_app:5000/device', headers=headers, data=json.dumps(obj))
+            rsp = requests.post('http://chive_app/device', headers=headers, data=json.dumps(obj))
             return rsp.ok
             # print(requests.post('http://127.0.0.1:5000/device', headers=headers, json=data))
     except:
         print "API microservice not running...keep getting data..."
+        print
         pass
 
 # run functions in a loop once every minute - until user issue break command
+
 try:
     while True:
         base_url = connect_apic(apic_ip)
