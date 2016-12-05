@@ -8,7 +8,7 @@ read -s apic_password
 echo "Enter your CHIVE APP IP Address or DNS Name:  "
 read chive_app
 
-docker run -ite APIC_IP=$apic_ip \
+docker run -de APIC_IP=$apic_ip \
     -e APIC_USERNAME=$apic_username \
     -e APIC_PASSWORD=$apic_password \
     -e CHIVE_APP=$chive_app \
