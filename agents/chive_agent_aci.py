@@ -12,7 +12,7 @@ import time
 apic_ip = os.environ['APIC_IP']
 apic_username = os.environ['APIC_USERNAME']
 apic_password = os.environ['APIC_PASSWORD']
-# chive_app = "chive_app"
+chive_app = os.environ['CHIVE_APP']
 
 
 def connect_apic(apic_ip):
@@ -145,7 +145,7 @@ def send2_RESTAPI(obj):
     try:
         while True:
             headers = {"Content-Type": "application/json"}
-            rsp = requests.post('http://chive_app:5000/device', headers=headers, data=json.dumps(obj))
+            rsp = requests.post('http://chive_app/device', headers=headers, data=json.dumps(obj))
             return rsp.ok
 
     except:
