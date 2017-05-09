@@ -8,7 +8,6 @@ import time
 # ---- sort user info from bash script section  -------
 # Get user provided information from bash script and parse it
 
-
 apic_ip = os.environ['APIC_IP']
 apic_username = os.environ['APIC_USERNAME']
 apic_password = os.environ['APIC_PASSWORD']
