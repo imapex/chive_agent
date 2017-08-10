@@ -144,7 +144,7 @@ def send2_RESTAPI(obj):
     try:
         while True:
             headers = {"Content-Type": "application/json"}
-            rsp = requests.post('http://' + chive_app + '/device', headers=headers, data=json.dumps(obj))
+            rsp = requests.post('http://app/device', headers=headers, data=json.dumps(obj))
             return rsp.ok
 
     except:
